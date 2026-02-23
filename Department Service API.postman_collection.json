@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "1b0e77f8-c86f-4975-a0f0-6ab63ab7f042",
+		"name": "Department Service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "52580902"
+	},
+	"item": [
+		{
+			"name": "get department",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDM0MTcsImV4cCI6MTc3MTkyOTgxN30.Mu5o7Qtb0dSmWoZvWAQh8T-HcDCI2q90ZV8BWCPNgIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dept_url}}/api/departments",
+					"host": [
+						"{{dept_url}}"
+					],
+					"path": [
+						"api",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save department",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDM0MTcsImV4cCI6MTc3MTkyOTgxN30.Mu5o7Qtb0dSmWoZvWAQh8T-HcDCI2q90ZV8BWCPNgIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"Computer\",\r\n \"location\":\"ahmedabad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{dept_url}}/api/departments",
+					"host": [
+						"{{dept_url}}"
+					],
+					"path": [
+						"api",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get department by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDM0MTcsImV4cCI6MTc3MTkyOTgxN30.Mu5o7Qtb0dSmWoZvWAQh8T-HcDCI2q90ZV8BWCPNgIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dept_url}}/api/departments/1",
+					"host": [
+						"{{dept_url}}"
+					],
+					"path": [
+						"api",
+						"departments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view Department Employees",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDM0MTcsImV4cCI6MTc3MTkyOTgxN30.Mu5o7Qtb0dSmWoZvWAQh8T-HcDCI2q90ZV8BWCPNgIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dept_url}}/api/departments/1/employees",
+					"host": [
+						"{{dept_url}}"
+					],
+					"path": [
+						"api",
+						"departments",
+						"1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

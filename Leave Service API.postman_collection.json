@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "a39cacb2-a155-4fff-941d-8cbbcc2f36d2",
+		"name": "Leave Service API",
+		"description": "Postman collection for Leave Management Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "52580902"
+	},
+	"item": [
+		{
+			"name": "Create Leave Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDUxOTIsImV4cCI6MTc3MTkzMTU5Mn0.T7uhVtBpaf014VlN6R_p7E46wONzsOqX5bmT2ERCfOo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"employeeId\": 8,\n  \"startDate\": \"2026-03-26\",\n  \"endDate\": \"2026-04-28\",\n  \"reason\": \"Family\"\n}"
+				},
+				"url": {
+					"raw": "{{leave_url}}/api/leaves",
+					"host": [
+						"{{leave_url}}"
+					],
+					"path": [
+						"api",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Leave Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc2MzI1NiwiZXhwIjoxNzcxODQ5NjU2fQ.9fIEuNjpKYCTqTSG4MFPPGBoj6eB2JuQTFgqz_w2rFI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{leave_url}}/api/leaves/3/status?status=APPROVED",
+					"host": [
+						"{{leave_url}}"
+					],
+					"path": [
+						"api",
+						"leaves",
+						"3",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "APPROVED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Leaves By Employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzE4NDUxOTIsImV4cCI6MTc3MTkzMTU5Mn0.T7uhVtBpaf014VlN6R_p7E46wONzsOqX5bmT2ERCfOo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{leave_url}}/api/leaves/employee/1",
+					"host": [
+						"{{leave_url}}"
+					],
+					"path": [
+						"api",
+						"leaves",
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Employee Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTY5NDMwMiwiZXhwIjoxNzcxNzgwNzAyfQ.ARN0eLgrxzEWmaazPluQjWGf4vYocw8CK5IrJJLshTY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"employeeId\": 9999,\n  \"startDate\": \"2026-02-25\",\n  \"endDate\": \"2026-02-28\",\n  \"reason\": \"Testing validation\"\n}"
+				},
+				"url": {
+					"raw": "{{leave_url}}/api/leaves",
+					"host": [
+						"{{leave_url}}"
+					],
+					"path": [
+						"api",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8082"
+		}
+	]
+}
